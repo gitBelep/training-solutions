@@ -30,8 +30,8 @@ public class BankAccountMain {
         account1.getInfo();
         account2.getInfo();
 
-        System.out.println("2->1 500");
-        account1.transfer(1000,account1);
+        System.out.println("2->1 1000");
+        account2.transfer(1000,account1);
         account1.getInfo();
         account2.getInfo();
     }

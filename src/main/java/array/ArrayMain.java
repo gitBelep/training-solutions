@@ -16,8 +16,18 @@ public class ArrayMain {
         }
         System.out.println();
 
-        boolean[] b = {false, true, false, true, false, true};
-        for (boolean i: b){
+        boolean[] bo = new boolean[6];
+        for (int i=0; i<bo.length; i++){
+            if (i%2 == 0){
+                bo[i] = false;
+            }else{
+                bo[i] = true;
+            }
+            System.out.print(bo[i] +", ");
+        }
+        System.out.println();
+
+        for (boolean i: bo){
             System.out.print(i + ", ");
         }
     }

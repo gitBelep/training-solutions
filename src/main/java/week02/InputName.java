@@ -11,9 +11,7 @@ public class InputName {
             n[i] = sc.nextLine();
         }
         for (int i=0; i<5; i++) {
-            System.out.println(n[i] + 1+i+"-ik elem");
+            System.out.println((i+1) +"-ik elem: "+ n[i]);
         }
-
     }
-
 }

@@ -39,6 +39,20 @@ public class ArrayOfArraysMain {
             return tr;
     }
 
+    public int[][] getValues(){
+            int[] months = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+            int[][] result = new int[12][];
+            for (int i=0; i<months.length; i++){
+                result[i] = new int[months[i]];
+                for(int j=0; j<months[i]; j++){
+                    result[i][j] = 0;
+                    System.out.print(result[i][j] +" ");
+                }
+                System.out.println();
+            }
+            return result;
+    }
+
     public static void main(String[] args) {
         System.out.println("Mekkora legyen a szorzótábla?");
         Scanner sc = new Scanner(System.in);
@@ -46,13 +60,16 @@ public class ArrayOfArraysMain {
         ArrayOfArraysMain a = new ArrayOfArraysMain();
         a.multiplicationTable(siz);
 
-        System.out.println(" - - - ");
+        System.out.println(" \n - Kiírás - ");
         int[][] secondArr={{8, 8, 9, 8, 9},{1},{45, 56},{0, 900, 0},{111}};
         a.printArrayOfArrays(secondArr);
 
         sc.nextLine();
-        System.out.println("Hány soros legyen a háromszögmátrix?");
+        System.out.println(" \n Hány soros legyen a háromszögmátrix?");
         int trSiz = sc.nextInt();
         a.triangularMatrix(trSiz);
+
+        System.out.println(" \n - Kiírás - ");
+        a.getValues();
         }
 }

@@ -45,7 +45,7 @@ public class ArrayOfArraysMain {
             for (int i=0; i<months.length; i++){
                 result[i] = new int[months[i]];
                 for(int j=0; j<months[i]; j++){
-                    result[i][j] = 0;
+                    result[i][j] = 0;   // felesleges. Már létrehoztam, s 0 az értéke.
                     System.out.print(result[i][j] +" ");
                 }
                 System.out.println();

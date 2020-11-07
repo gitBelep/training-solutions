@@ -36,7 +36,6 @@ public class Controller {
     }
 
     public void runMenu(Office off){
-        for (int ji= 0; ji <11; ji++){
         System.out.println("Mivel folytassuk?");
         Scanner sc2 = new Scanner(System.in);
         int number = sc2.nextInt();
@@ -61,7 +60,6 @@ public class Controller {
             int area = sc2.nextInt();
             off.printAreasLargerThan(area);
         }
-    }
     }
 
     public static void main(String[] args) {

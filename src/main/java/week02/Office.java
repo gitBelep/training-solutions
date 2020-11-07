@@ -33,7 +33,7 @@ public class Office {
 
     public void Areas(){
         for (int i = 0; i<rooms.size(); i++){
-            System.out.print(rooms.get(i).getName() +" "+ rooms.get(i).getWidth() +"m "+ rooms.get(i).getLength() +"m " +rooms.get(i).getArea(rooms.get(i)) +"m2");
+            System.out.print(rooms.get(i).getName() +" "+ rooms.get(i).getWidth() +"m "+ rooms.get(i).getLength() +"m " +rooms.get(i).getArea(rooms.get(i)) +"m2 ");
         }
         System.out.println();
     }
@@ -41,7 +41,7 @@ public class Office {
     public void printMeetingRoomsWithName(String name){
         for (int i = 0; i<rooms.size(); i++){
             if (rooms.get(i).getName().equals(name)){
-                System.out.print(rooms.get(i).getName() +" "+ rooms.get(i).getWidth() +"m "+ rooms.get(i).getLength() +"m " +rooms.get(i).getArea(rooms.get(i)) +"m2");
+                System.out.print(rooms.get(i).getName() +" "+ rooms.get(i).getWidth() +"m "+ rooms.get(i).getLength() +"m " +rooms.get(i).getArea(rooms.get(i)) +"m2  ");
             }
         }
         System.out.println();
@@ -59,10 +59,9 @@ public class Office {
     public void printAreasLargerThan(int area){
         for (int i =0; i < rooms.size(); i++){
             if (rooms.get(i).getArea(rooms.get(i)) > area) {
-                System.out.print(rooms.get(i).getName() +" "+ rooms.get(i).getWidth() +"m "+ rooms.get(i).getLength() +"m " +rooms.get(i).getArea(rooms.get(i)) +"m2");
+                System.out.print(rooms.get(i).getName() +" "+ rooms.get(i).getWidth() +"m "+ rooms.get(i).getLength() +"m " +rooms.get(i).getArea(rooms.get(i)) +"m2 ");
             }
         }
         System.out.println();
     }
-
 }

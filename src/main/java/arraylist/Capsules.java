@@ -39,5 +39,9 @@ public class Capsules {
         caps.removeFirst();
         caps.removeLast();
         System.out.println(caps.getColors());
+
+        List<String> second = caps.getColors();
+        second.clear(); //referencia az eredeti colors Objektumra mutat
+        System.out.println(caps.getColors());
     }
 }

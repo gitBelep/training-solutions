@@ -18,6 +18,13 @@ public class Game {
             System.out.println(warriorA.toString());
             System.out.println(warriorB.toString());
             i = (warriorA.isAlive() && warriorB.isAlive()) ? 0 : 4;
+
+
+        }
+        if (warriorA.isAlive() == true){
+            System.out.println("Győztes: "+ warriorA.getName());
+        }else{
+            System.out.println("Győztes: "+ warriorB.getName());
         }
     }
 }

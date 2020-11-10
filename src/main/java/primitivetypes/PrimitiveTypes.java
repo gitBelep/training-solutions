@@ -11,7 +11,9 @@ public class PrimitiveTypes {
         Integer i =7;
         Integer k= 5;
         System.out.println(i+k);
-
+        System.out.println(Integer.MIN_VALUE);
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(Integer.MAX_VALUE-Integer.MIN_VALUE);
+        System.out.println(Double.NEGATIVE_INFINITY );
     }
-
 }

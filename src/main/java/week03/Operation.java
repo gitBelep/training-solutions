@@ -19,14 +19,7 @@ public class Operation {
         System.out.println("Összeadás ~  int + int formátumban");
         Scanner sc = new Scanner(System.in);
         String muvelet = sc.nextLine();
-        Operation opp = null;  //kivül létrehoz, h lehessen vizsgálni
-        while (opp == null) {
-            try {
-                opp = new Operation(muvelet);
-            } catch (IllegalArgumentException e) {
-                System.out.println(e);
-            }
-        }
+        Operation  opp = new Operation(muvelet);
         System.out.println(opp.getResult());
     }
 }

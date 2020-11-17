@@ -24,6 +24,10 @@ public class Name {
         this.givenName = givenName;
     }
 
+    public String concatNameWesternStyle(){
+        String wName = title.getName() +" "+ givenName +" "+ middleName +" "+ familyName;
+        return wName;
+    }
     public String concatNameHungarianStyle(){
         String hName;
         if (middleName.isEmpty()){

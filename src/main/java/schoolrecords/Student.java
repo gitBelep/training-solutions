@@ -15,6 +15,11 @@ public class Student {
         }
         this.name = name;
     }
+
+    public String getName() {
+        return name;
+    }
+
     // érdemjegy rögzítése
     public void grading(Mark mark){
         if (mark == null) {

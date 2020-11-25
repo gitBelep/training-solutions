@@ -51,7 +51,7 @@ public class Student {
             return avg;
         }
         for (Mark m: marks){
-            if (m.getSubject() == subject) {
+            if (m.getSubject().getSubjectName() == subject.getSubjectName()) {
                 sum = sum + m.getMarkType().getValue();
                 i++;
             }
@@ -61,6 +61,15 @@ public class Student {
         }
         avg = ((double) Math.round(sum*100/i)) /100;
         return avg;
+    }
+
+    boolean hasMarkInSubject(Subject sub){
+        for (Mark mm : marks){
+            if (mm.getSubject().getSubjectName().equals(sub.getSubjectName())){
+                return true;
+            }
+        }
+        return false;
     }
 
     private boolean isEmpty(String str){

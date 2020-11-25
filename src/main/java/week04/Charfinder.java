@@ -1,23 +1,24 @@
 package week04;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Charfinder {
 
-    public class Main {
-        public static void main(String[] args) {
-        }
-
-        List<Integer> getIndexesOfChar(String str, char c) {
-            List<Integer> result = new ArrayList<>();
-            Character cc = c;
-            int place  = str.indexOf(c);
-            for (int i =0; i < str.length(); i++){
-                result.add(str.indexOf(c,place));
-                place = result.get(result.size()-1);
-            }
-            return result;
-        }
+    public static void main(String[] args) {
+        Charfinder m = new Charfinder();
+        System.out.println(m.getIndexesOfChar("Elmesél, szeletel", "e"));
     }
+
+    public List<Integer> getIndexesOfChar(String strBe, String betu) {
+        List<Integer> result = new ArrayList<>();
+        String str = strBe.toLowerCase();
+        for (int i =0; i<str.length(); i++) {
+            if ( (str.substring(i,i+1)).equals(betu) ){
+                result.add(i);
+            }
+        }
+        return result;
+    }
+
 }
+

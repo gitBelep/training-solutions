@@ -5,6 +5,7 @@ public class User {
     private String lastName;
     private String eMail;
 
+
     public User(String firstName, String lastName, String eMail){
         this.firstName = firstName;
         this.lastName = lastName;

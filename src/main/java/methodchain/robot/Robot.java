@@ -11,7 +11,7 @@ public class Robot {
         distance = distance + meter;
         return this;
     }
-    
+
 //360¤ = 0¤
     public Robot rotate(int angle){
         degree = (degree + angle) % 360;

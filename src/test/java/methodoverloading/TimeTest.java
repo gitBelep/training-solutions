@@ -43,7 +43,7 @@ public class TimeTest {
         Time anotherTime = new Time(13, 14, 15);
         //When
         Time time = new Time(anotherTime);
-//Ezt az Objektumot átjavítottam anotherTime-ra
+
         assertEquals(13, anotherTime.getHours());
         assertEquals(14, anotherTime.getMinutes());
         assertEquals(15, anotherTime.getSeconds());

@@ -8,7 +8,7 @@ public class BankTransaction {
     private static BigDecimal trxSumValue = new BigDecimal(0);
     private static long min;
     private static long max;
-    private static long currentMinValue;
+    private static     long currentMinValue;
     private static long currentMaxValue;
     private long trxValue;
 

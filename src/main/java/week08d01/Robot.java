@@ -1,6 +1,13 @@
 package week08d01;
+//Coordinate-ben lehetne változtatni x és y-t pl: increase()
+//Nem szerencsés Stringgel visszatérni
+//  Lehet kétdimenziós tömb is, hisz koordináta.
+//Kicit hosszú a method, ketté lehetne venni:
+//  str értelmezés
+//  switch
+//moveOneStep(str.charAt(i)) is lehet
 
-public class Robot {
+ class Robot {
     private String str;
     private Coordinate coo;
 
@@ -8,8 +15,8 @@ public class Robot {
         this.coo = new Coordinate(0,0);
     }
 
-    public String move(String str){
-        str = str + " ";
+    public Coordinate move(String str){
+        str = str.toUpperCase() + " ";
         String way = "";
         for (int i = 0; i < str.length(); i++){
             way= str.substring(i, i+1);
@@ -26,8 +33,10 @@ public class Robot {
                 case "B":
                     coo.setX(coo.getX()-1);
                     break;
+                default:
+                    throw new IllegalArgumentException("Non existing direction");
             }
         }
-        return "X="+ coo.getX() +", Y="+ coo.getY();
+        return coo;
     }
 }

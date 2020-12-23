@@ -12,8 +12,12 @@ public class SantaClaus {
     public void getThroughChimneys(){
         for (Person p : persons){
             p.setPresent();
-            System.out.println(p.getPresent());
         }
     }
 
+    public void getThroughChimneys2(){
+        for (Person p : persons){
+            p.setPresent2();
+        }
+    }
 }

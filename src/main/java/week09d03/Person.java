@@ -1,5 +1,4 @@
 package week09d03;
-
 import java.util.List;
 import java.util.Random;
 
@@ -37,11 +36,19 @@ public class Person {
         }
     }
 
+//Fent: switch nehezen bővíthető. Így: csak hozzáírok az enumokhoz.
+    public void setPresent2() {
+        Random rnd = new Random();
+        if (age > 14) {
+            present = Present.values()[rnd.nextInt(Present.values().length - 1) + 1];
+        } else {
+            present = Present.values()[rnd.nextInt(Present.values().length - 1)];
+        }
+    }
 
     public Present getPresent() {
         return present;
     }
-
     public int getAge() {
         return age;
     }

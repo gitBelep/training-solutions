@@ -7,7 +7,7 @@ public class ArraySelector {
         if (incomingList.length == 0){
             return new String("");
         }
-        
+
         for (int i = 0; i < incomingList.length; i=i+2){
             result = result + incomingList[i] +", ";
         }

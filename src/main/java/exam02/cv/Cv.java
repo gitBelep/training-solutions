@@ -13,13 +13,22 @@ public class Cv {
     public void addSkills(String... skills){
         String cutName = "";
         String cutLevel = "";
-        int level = 0;
         for (String s : skills){
             cutName = s.substring(0, s.length()-3).trim();
             cutLevel = s.substring(s.indexOf("(")+1, s.indexOf(")"));
-            level = Integer.parseInt(cutLevel);
-            this.skills.add(new Skill(cutName, level));
+            int level = getLevel(cutLevel);
+            this.skills.add( new Skill(cutName, level) );
         }
+    }
+
+    private int getLevel(String cutLevel){
+        int level = 0;
+        try {
+            level = Integer.parseInt(cutLevel);
+        } catch (NumberFormatException ex) {
+            System.out.println(ex);
+        }
+        return level;
     }
 
     public int findSkillLevelByName(String find){

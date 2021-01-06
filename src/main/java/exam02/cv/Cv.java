@@ -1,5 +1,4 @@
 package exam02.cv;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,8 +28,7 @@ public class Cv {
                 return sk.getLevel();
             }
         }
-        throw new IllegalArgumentException("Skill not found");
-                //SkillNotFoundException("Skill not found");
+        throw new SkillNotFoundException("Skill not found");
     }
 
     public String getName() {

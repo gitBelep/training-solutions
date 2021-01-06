@@ -1,10 +1,10 @@
 package exam02.cv;
 
 public class SkillNotFoundException extends RuntimeException {
-    private String ex;
+    private String txt;
 
-    public SkillNotFoundException(String ex) {
-        this.ex = ex;
+    public SkillNotFoundException(String txt) {
+        this.txt = txt;
     }
 
 }

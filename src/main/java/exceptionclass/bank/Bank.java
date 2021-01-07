@@ -1,4 +1,4 @@
-package bank;
+package exceptionclass.bank;
 import java.util.List;
 
 public class Bank {

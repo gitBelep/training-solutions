@@ -1,4 +1,4 @@
-package bank;
+package exceptionclass.bank;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;

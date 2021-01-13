@@ -2,3 +2,7 @@
 *.iml
 *.class
 target
+src/main/resources/track.gpx
+src/main/java/tetris/
+src/main/java/aa_sajat
+src/main/java/aa_matek

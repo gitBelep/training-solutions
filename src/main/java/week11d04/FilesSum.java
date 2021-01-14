@@ -36,3 +36,12 @@ public class FilesSum {
  *                ii = "number"+ i +".txt";
  *            }
  */
+
+/*
+Adott az aktuális könyvtárban több, fájl, melynek a nevei: number00.txt,
+number03.txt, number20.txt, egészen 99-ig. Nem minden fájl létezik,
+lehet, hogy bizonyos számhoz tartozó fájl kimaradt. Olvasd be az
+állományból a benne lévő számot, és ezt összegezd! Használd a
+Files.isRegularFile() metódust arra, hogy megnézd, létezik-e a fájl!
+Használd a Files.readString() metódust a fájl beolvasására!
+ */

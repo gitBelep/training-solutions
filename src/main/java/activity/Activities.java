@@ -13,7 +13,7 @@ public class Activities {
         activities.add(activity);
     }
 
-    public List<Report> distancesByTypes(){
+    public List<Report> distancesByTypesOldVersionByMe(){
         List<Report> distancesToType = new ArrayList<>();
         double sumDistance = 0;
         for (ActivityType a : ActivityType.values()){
@@ -25,6 +25,19 @@ public class Activities {
             distancesToType.add(new Report(a, sumDistance));
         }
         return distancesToType;
+    }
+
+    public List<Report> distancesByTypes(){
+        double[] sum = new double[ActivityType.values().length];
+        for (Activity ac : activities){
+            sum[ac.getType().ordinal()] += ac.getDistance();
+        }
+
+        List<Report> result = new ArrayList<>();
+        for (ActivityType act : ActivityType.values()){
+            result.add(new Report(act, sum[act.ordinal()]));
+        }
+        return result;
     }
 
     public int numberOfTrackActivities() {

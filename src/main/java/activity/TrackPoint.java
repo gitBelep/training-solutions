@@ -11,11 +11,11 @@ public class TrackPoint {
     }
 
     public double getDistanceFrom(TrackPoint otherTrackPoint) {
-        double lat1 = this.getCoordinate().getLatitude();
+        double lat1 = coordinate.getLatitude();
         double lat2 = otherTrackPoint.getCoordinate().getLatitude();
-        double lon1 = this.getCoordinate().getLongitude();
+        double lon1 = coordinate.getLongitude();
         double lon2 = otherTrackPoint.getCoordinate().getLongitude();
-        double el1 = this.getElevation();
+        double el1 = elevation;
         double el2 = otherTrackPoint.getElevation();
 
         double latDistance = Math.toRadians(lat2 - lat1);

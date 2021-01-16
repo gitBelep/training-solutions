@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.List;
 
 public class SalaryWriter {
@@ -42,10 +41,6 @@ public class SalaryWriter {
     private void writeNameWithoutSign(PrintWriter wr, String name){
         wr.print(name +": ");
         wr.println(100000);
-    }
-
-    public List<String> getNames() {
-        return new ArrayList<>(names);
     }
 
 }

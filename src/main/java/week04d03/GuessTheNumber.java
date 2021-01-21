@@ -1,7 +1,7 @@
-package week04;
+package week04d03;
 import java.util.Scanner;
 
-public class NumberGuesser {
+public class GuessTheNumber {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int rnd = (int) (Math.random()*100+1);

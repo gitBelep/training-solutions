@@ -1,4 +1,4 @@
-package week02;
+package week02d02;
 
 public class MeetingRoom {
     private String name;

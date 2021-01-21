@@ -1,8 +1,8 @@
-package week02;
+package week02d04;
 
 import java.util.Scanner;
 
-public class InputName {
+public class InputNames {
     public static void main(String[] args) {
         System.out.println("add");
         Scanner sc = new Scanner(System.in);

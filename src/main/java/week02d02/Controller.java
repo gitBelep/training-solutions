@@ -1,4 +1,5 @@
-package week02;
+package week02d02;
+
 import java.util.Scanner;
 
 public class Controller {

@@ -1,11 +1,11 @@
-package week04;
+package week04d02;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Charfinder {
+public class Search {
 
     public static void main(String[] args) {
-        Charfinder m = new Charfinder();
+        Search m = new Search();
         System.out.println(m.getIndexesOfChar("Elmesél, szeletel", "e"));
     }
 

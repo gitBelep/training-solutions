@@ -1,4 +1,4 @@
-package week02;
+package week02d03;
 class Product {
     private String name;
     private String code;

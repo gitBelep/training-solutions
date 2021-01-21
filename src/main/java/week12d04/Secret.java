@@ -1,31 +1,27 @@
 package week12d04;
 
-import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Secret {
 
-    public void loadSecret() {
-        Path file = Path.of("secret.dat");
-        try (InputStream ins = new BufferedInputStream(Files.newInputStream(file))) {
+    public String showSecret() {
+        try  {
+            InputStream ins = Secret.class.getResourceAsStream("/secret.dat");
             byte[] bytes = ins.readAllBytes();
-            encodeSecret(bytes);
+            StringBuilder sb = new StringBuilder();
+            for(byte b : bytes){
+                char c = (char) (b + 10);
+                sb.append(c);
+            }
+            return sb.toString();
         } catch (IOException e) {
             throw new IllegalStateException("Cannot read file", e);
         }
     }
 
-    private void encodeSecret(byte[] secret){
-        List<Character> text = new ArrayList<>();
-        for(byte b : secret){
-            char c = (char)((byte) (b + 10));
-            text.add(c);
-        }
-        System.out.println(text.toString());
+    public static void main(String[] args) {
+        Secret secret = new Secret();
+        System.out.println( secret.showSecret() );
     }
 }

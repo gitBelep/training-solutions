@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class ObjectsMain {
-   
+
     public static void main(String[] args) {
         new Book();
         System.out.println(new Book() +"  ez a sout(new Book)");

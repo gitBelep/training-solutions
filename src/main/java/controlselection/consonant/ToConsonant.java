@@ -1,4 +1,4 @@
-package controllselection.consonant;
+package controlselection.consonant;
 
 import java.util.ArrayList;
 import java.util.List;

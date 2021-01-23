@@ -1,6 +1,6 @@
-package controllselection;
+package controlselection;
 
-import controllselection.greetings.Greetings;
+import controlselection.greetings.Greetings;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

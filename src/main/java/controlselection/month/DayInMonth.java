@@ -1,4 +1,4 @@
-package controllselection.month;
+package controlselection.month;
 import java.util.Scanner;
 
 public class DayInMonth {

@@ -1,4 +1,4 @@
-package controllselection.week;
+package controlselection.week;
 import java.util.Scanner;
 
 public class DayOfWeeks {

@@ -1,4 +1,4 @@
-package controllselection.accents;
+package controlselection.accents;
 import java.util.List;
 import java.util.Scanner;
 

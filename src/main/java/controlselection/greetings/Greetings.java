@@ -1,4 +1,4 @@
-package controllselection.greetings;
+package controlselection.greetings;
 
 public class Greetings {
     public String sayGreeting(int hour, int min){

@@ -86,4 +86,7 @@ public class Town {
         }
 
     }
+//GitHubon a `examples\week13d01\src\main\resources\iranyitoszamok-varosok-2021.csv` fájl
+// tartalmazza a magyar városok listáját. Add vissza a leghosszabb nevű várost!
+// ! Átváltani RAW nézetre, mielőtt kimásolom az URL-t!
 }

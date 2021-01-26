@@ -1,8 +1,8 @@
-package initalizer;
+package initializer;
 
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;
-import static initalizer.CreditCard.ACTUAL_RATES;
+import static initializer.CreditCard.ACTUAL_RATES;
 import static org.junit.jupiter.api.Assertions.*;
 
 

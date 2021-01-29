@@ -1,6 +1,6 @@
-package methoverloading.pub;
+package methodoverloading.pub;
 
-import methoverloading.Time;
+import methodoverloading.Time;
 import java.util.List;
 
 public class ListOfGoodPubs {

@@ -1,7 +1,5 @@
 package week14d03;
 
-import collectionscomp.Book;
-
 import java.text.Collator;
 import java.util.*;
 
@@ -12,15 +10,20 @@ public class ClassNoteBook {
         this.students = students;
     }
 
-    public List<Student> sortNotebook(){
+    public List<Student> sortNotebook() {
         List<Student> result = new ArrayList<>(students);
-//        Collator localeCollator = Collator.getInstance(new Locale("hu", "HU"));
-//        localeCollator.setStrength(Collator.PRIMARY);
-//        Collections.sort(result, localeCollator);
-// Nem rendez Student Listát, csak List<String>-et.
-        Collections.sort(result);
+        result.sort(new Comparator<Student>() {
+            @Override
+            public int compare(Student s1, Student s2) {
+                Collator localeCollator = Collator.getInstance(new Locale("hu", "HU"));
+                return localeCollator.compare(s1.getName(), s2.getName());
+            }
+        });
         return result;
     }
+
+//Collator localeCollator = Collator.getInstance(new Locale("hu", "HU"));
+//result.sort(localeCollator);  // Nem rendez Student Listát, csak List<String>-et.
 
     public List<Student> getStudents() {
         return new ArrayList<>(students);

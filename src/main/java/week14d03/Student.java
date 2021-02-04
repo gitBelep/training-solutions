@@ -2,9 +2,9 @@ package week14d03;
 
 import java.util.*;
 
-public class Student implements Comparable<Student>{
+public class Student {
     private final String name;
-    private Map<String, List<Integer>> notes = new HashMap<>();
+    private final Map<String, List<Integer>> notes = new HashMap<>();
 
     public Student(String name) {
         this.name = name;
@@ -15,11 +15,6 @@ public class Student implements Comparable<Student>{
             notes.put(fact, new ArrayList<>());
         }
         notes.get(fact).add(note);
-    }
-
-    @Override
-    public int compareTo(Student o) {
-        return this.name.compareTo(o.name);
     }
 
     public Map<String, List<Integer>> getNotes() {

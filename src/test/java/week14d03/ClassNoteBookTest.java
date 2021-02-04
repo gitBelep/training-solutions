@@ -29,7 +29,7 @@ class ClassNoteBookTest {
         st1.giveMark("angol", 4);
         assertEquals(2, st1.getNotes().get("angol").size());
 
-        assertEquals("{matek=[5], angol=[1, 2]}", cnt.sortNotebook().get(0).getNotes().toString());
+        assertEquals("{matek=[5], angol=[1, 2]}", cnt.sortNotebook().get(2).getNotes().toString());
 
         System.out.println(cnt.sortNotebook().toString());
     }

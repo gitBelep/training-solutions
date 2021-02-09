@@ -29,8 +29,8 @@ public class BankAccounts {
     public List<BankAccount> listBankAccountsByBalanceDesc(){
         List<BankAccount> result = new ArrayList<>(accounts);
         result.sort(Comparator.comparingDouble(BankAccount::getBalance).reversed());
-//result.sort( (BankAccount b1, BankAccount b2) ->  (int) (b1.getBalance() - b2.getBalance()) );
-//result.sort(reverseOrder());   //nem jó
+result.sort( (BankAccount b1, BankAccount b2) ->  (int) (b1.getBalance() - b2.getBalance()));
+//result.sort(Comparator.reverseOrder());   //nem jó
 return result;
     }
 

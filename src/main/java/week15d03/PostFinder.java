@@ -30,7 +30,8 @@ public class PostFinder {
     }
 
     private boolean isTitleAndContentFilledOut(String title, String content){
-        return !content.isBlank() && !title.isBlank();
+        return content != null && title != null
+                && !content.isBlank() && !title.isBlank();
     }
 
 }

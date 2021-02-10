@@ -24,7 +24,9 @@ public class BankAccounts {
         List<BankAccount> result = new ArrayList<>(accounts);
         result.sort((BankAccount b1, BankAccount b2) ->  (int) (Math.abs(b1.getBalance()) - Math.abs(b2.getBalance()) ) );
         return result;
-    }
+    }   //megoldásban:
+// ordered.sort(Comparator.comparing((a) -> Math.abs(a.getBalance())));
+
 
     public List<BankAccount> listBankAccountsByBalanceDesc(){
         List<BankAccount> result = new ArrayList<>(accounts);

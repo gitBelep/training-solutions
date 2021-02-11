@@ -41,6 +41,6 @@ public class ChoronaCounter {
     private void skipFirstLine(BufferedReader br) throws IOException{
         br.readLine();
     }
-    
+
 }
 

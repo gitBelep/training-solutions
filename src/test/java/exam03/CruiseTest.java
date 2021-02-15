@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class CruiseTest {
 
     private Boat boat = new Boat("WetDreams", 5);
-
     private Cruise cruise = new Cruise(boat, LocalDate.of(2021, 1, 1), 100_000);
 
     @Test
@@ -62,11 +61,13 @@ public class CruiseTest {
     @Test
     void getPassengerNamesOrdered() {
         cruise.bookPassenger(new Passenger("Jack Smith", CruiseClass.FIRST));
-        cruise.bookPassenger(new Passenger("John Doe", CruiseClass.LUXURY));
+        cruise.bookPassenger(new Passenger("Űr", CruiseClass.LUXURY));
+        cruise.bookPassenger(new Passenger("Áb", CruiseClass.SECOND));
         cruise.bookPassenger(new Passenger("Jack Doe", CruiseClass.FIRST));
+        cruise.bookPassenger(new Passenger("Ad", CruiseClass.SECOND));
 
         List<String> names = cruise.getPassengerNamesOrdered();
-        assertEquals(List.of("Jack Doe", "Jack Smith", "John Doe"), names);
+        assertEquals(List.of("Áb","Ad","Jack Doe", "Jack Smith", "Űr"), names);
     }
 
     @Test

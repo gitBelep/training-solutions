@@ -1,16 +1,15 @@
 package exam03;
 
+import java.text.Collator;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Cruise {
-    private Boat boat;
-    private LocalDate sailing;
-    private double basicPrice;
+    private final Boat boat;
+    private final LocalDate sailing;
+    private final double basicPrice;
     private List<Passenger> passengers = new ArrayList<>();
+    static final Collator collatorHu = Collator.getInstance(new Locale("hu","HU"));
 
     public Cruise(Boat boat, LocalDate sailing, double basicPrice) {
         this.boat = boat;
@@ -45,7 +44,7 @@ public class Cruise {
         for (Passenger p : passengers){
             names.add(p.getName());
         }
-        names.sort(null);
+        names.sort(collatorHu::compare);
         return names;
     }
 

@@ -6,7 +6,7 @@ import java.text.Collator;
 import java.util.*;
 
 public class BalatonStorm {
-    
+
     public List<String> getStationsInStorm(BufferedReader br) throws IOException {
         String line;
         Collator huCollator = Collator.getInstance(new Locale("hu", "HU"));

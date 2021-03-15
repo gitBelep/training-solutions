@@ -55,6 +55,9 @@ public class Validation {
     }
 
     public String isTajValid(String strRow){
+        if (strRow.trim().length() != 9){
+            throw new NumberFormatException("TAJ number is too short.");
+        }
         String strTAJ = strRow.trim().substring(0,9);
         int sum = 0;
         try{
@@ -66,7 +69,7 @@ public class Validation {
                 return strTAJ;
             }
         } catch (NumberFormatException n){
-            throw new IllegalArgumentException("TAJ number is not valid.");
+            throw new IllegalArgumentException("TAJ number is not valid. "+ n.getMessage());
         }
         throw new IllegalArgumentException("TAJ number is not valid.");
     }

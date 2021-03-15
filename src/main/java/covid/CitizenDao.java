@@ -1,26 +1,34 @@
 package covid;
 
 import org.mariadb.jdbc.MariaDbDataSource;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class CitizenDao {
-    private static MariaDbDataSource ds;
+    private MariaDbDataSource ds;
 
-    static {
+    public CitizenDao(){
+        Properties prop = new Properties();
+        try (InputStream is = CitizenDao.class.getResourceAsStream("db.properties")){
+            prop.load(is);
+        } catch (IOException e){
+            System.out.println("Cannot load Properties");
+        }
+
+        MariaDbDataSource ds = new MariaDbDataSource();
         try {
-            ds = new MariaDbDataSource();
-            ds.setUrl("jdbc:mariadb://localhost:3306/covid?useUnicode=true");
-            ds.setUser("doctor");
-            ds.setPassword("doctor");
+            ds.setUrl(prop.getProperty("url"));
+            ds.setUser(prop.getProperty("user"));
+            ds.setPassword(prop.getProperty("password", "doctor"));
         } catch (SQLException sq) {
             throw new IllegalStateException("Cannot connect", sq);
         }
+        this.ds = ds;
     }
 
     public List<String> findCityToZip(String zipCode) {
@@ -145,7 +153,7 @@ public class CitizenDao {
         try (Connection conn = ds.getConnection()) {
             conn.setAutoCommit(false);
             try (PreparedStatement ps = conn.prepareStatement(
-                    "UPDATE `citizens` SET `number_of_vaccination` = (SELECT `number_of_vaccination` FROM `citizens` WHERE taj = ?) + 1 WHERE `taj` = ?"
+                    "UPDATE `citizens` SET `number_of_vaccination` = (SELECT `number_of_vaccination` FROM `citizens` WHERE `taj` = ?) + 1, `last_vaccination` = NOW() WHERE `taj` = ?"
             )) {
                 ps.setString(1, tajStr);
                 ps.setString(2, tajStr);
@@ -257,6 +265,10 @@ public class CitizenDao {
         } catch (SQLException se) {
             throw new IllegalArgumentException("Wrong ZIP Code", se);
         }
+    }
+
+    public MariaDbDataSource getDs() {
+        return ds;
     }
 
 }

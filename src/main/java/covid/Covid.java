@@ -8,7 +8,6 @@ import java.nio.file.Path;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class Covid {
     private CitizenDao dao = new CitizenDao();

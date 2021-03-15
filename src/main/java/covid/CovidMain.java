@@ -6,10 +6,9 @@ public class CovidMain {
     private static boolean QUIT = false;
     private static Scanner sc = new Scanner(System.in);
     private Validation validation = new Validation();
-    private CitizenDao dao = new CitizenDao();
     private Covid covid = new Covid();
     private String generatedFileName = "";
-
+    private CitizenDao dao = new CitizenDao();
 
     public static void main(String[] args) {
         CovidMain covid2021 = new CovidMain();
@@ -19,7 +18,6 @@ public class CovidMain {
         }
     }
 
-
     public void menu() {
         System.out.println(
                         "MENÜ     *     *     *   Quit: \"Q\"\n" +
@@ -28,35 +26,24 @@ public class CovidMain {
                         "3. Generálás\n" +
                         "4. Oltás\n" +
                         "5. Oltás meghiúsulás\n" +
-                        "6. Riport");
+                        "6. Riport\n"+
+                        "7. Riport irányítószámhoz");
     }
 
     private void choseMenu(String str) {
         switch (str) {
-            case "1":
-                registration();
-                break;
-            case "2":
-                massRegistration();
-                break;
-            case "3":
-                generateNameList();
-                break;
-            case "4":
-                vaccinate();
-                break;
-            case "5":
-                failedVaccination();
-                break;
-            case "6":
-                report();
-                break;
-            case "Q":
+            case "1" -> registration();
+            case "2" -> massRegistration();
+            case "3" -> generateNameList();
+            case "4" -> vaccinate();
+            case "5" -> failedVaccination();
+            case "6" -> report();
+            case "7" -> reportForOneZip();
+            case "Q" -> {
                 QUIT = true;
                 System.out.println("Good bye!");
-                break;
-            default:
-                System.out.println("Invalid key\n");
+            }
+            default -> System.out.println("Invalid key\n");
         }
     }
 
@@ -77,6 +64,7 @@ public class CovidMain {
         }
     }
 
+//Ötlet: Message.class létrehozása: akkor mindezek lenyomhatók a Validationsba
     private String nameValidation(){
         System.out.println("Kérem adja meg adatait!  Teljes név:");
         String name = sc.nextLine();
@@ -163,16 +151,24 @@ public class CovidMain {
     }
 
     public void reportForOneZip() {
-        Map<Integer, Integer> table = dao.reportForOneZipCode(zipCodeValidation());
-        System.out.println("Megkapott oltások száma: személyek száma  "+ table.size());
-        for(Map.Entry<Integer, Integer> m : table.entrySet()){
-            System.out.print(m.getKey() + " db:   "+ m.getValue()  +" személy \n");
+        try {
+            Map<Integer, Integer> table = dao.reportForOneZipCode(zipCodeValidation());
+            System.out.println("Megkapott oltások száma: személyek száma  ");
+            for (Map.Entry<Integer, Integer> m : table.entrySet()) {
+                System.out.print(m.getKey() + " db:   " + m.getValue() + " személy \n");
+            }
+        }catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
         }
     }
 
     public void report(){
-        covid.report();
-        System.out.println("Riport kész: d:/covid/report.txt\n");
+        try {
+            covid.report();
+            System.out.println("Riport kész: d:/covid/report.txt\n");
+        } catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
     }
 
 }
